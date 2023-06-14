@@ -1,0 +1,6 @@
+namespace: karpenter
+sources:
+  main:
+    kind: kustomize
+    path: ci/preview/us-east-1/eks-mgmt/karpenter-settings
+    targetRevision: "stable/2023-05-25--08-39-42/f599962"

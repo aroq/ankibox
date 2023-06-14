@@ -1,0 +1,20 @@
+ignoreDifferences:
+- jsonPointers:
+  - /data
+  kind: Secret
+  namespace: karpenter
+namespace: karpenter
+sources:
+  main:
+    chart: karpenter/karpenter
+    helm:
+      valueFiles:
+      - $values/ci/base/eks-mgmt/karpenter/values.yaml
+      - $values/ci/preview/base/eks-mgmt/karpenter/values.yaml
+      - $values/ci/preview/ue1-green/eks-mgmt/karpenter/values.yaml
+    kind: helm
+    repoURL: public.ecr.aws
+    targetRevision: v0.25.0
+  values:
+    kind: values
+    targetRevision: "stable/2023-05-25--08-39-42/f599962"
