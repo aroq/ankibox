@@ -17,4 +17,4 @@ sources:
     targetRevision: v0.25.0
   values:
     kind: values
-    targetRevision: "stable/2023-05-25--08-39-42/f599962"
+    targetRevision: "test"
