@@ -1,8 +1,45 @@
-# This policy will always approve every PR.
-
 policy:
   approval:
-  - no approval necessary
+  - preview
+  - prod
+  - support
 
 approval_rules:
-- name: no approval necessary
+
+- name: preview
+  description: preview-specific files
+  if:
+    only_changed_files:
+      paths:
+      - '.*/preview/.*'
+  requires:
+    count: 0
+
+- name: prod
+  description: prod files
+
+  if:
+    changed_files:
+      paths:
+      - '.*/prod/.*'
+  requires:
+    count: 1
+    users: ["aroq"]
+
+  options:
+    request_review: true
+    mode: all-users
+
+
+- name: support
+  description: support files
+  if:
+    only_changed_files:
+      paths:
+      - '.support/.*'
+  requires:
+    count: 1
+    users: ["aroq"]
+  options:
+    request_review: true
+    mode: all-users
