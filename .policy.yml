@@ -25,6 +25,9 @@ approval_rules:
     count: 1
     users: ["aroq"]
   options:
+    # If true, approvals by the author of a pull request are considered when
+    # calculating the status.
+    allow_author: true
     request_review:
       enabled: true
       mode: all-users
@@ -39,6 +42,9 @@ approval_rules:
     count: 1
     users: ["aroq"]
   options:
+    # If true, approvals by the author of a pull request are considered when
+    # calculating the status.
+    allow_author: true
     request_review:
       enabled: true
       mode: all-users
