@@ -27,7 +27,12 @@ approval_rules:
     users: ["aroq"]
 
   options:
+<<<<<<< Updated upstream
     request_review: true
+=======
+    request_review:
+      enabled: true
+>>>>>>> Stashed changes
     mode: all-users
 
 
@@ -41,5 +46,10 @@ approval_rules:
     count: 1
     users: ["aroq"]
   options:
+<<<<<<< Updated upstream
     request_review: true
+=======
+    request_review:
+      enabled: true
+>>>>>>> Stashed changes
     mode: all-users
