@@ -1,20 +1,40 @@
 version: 1
 merge:
+  # "trigger" defines the set of pull requests considered by bulldozer. If
+  # the section is missing, bulldozer considers all pull requests not excluded
+  # by the ignore conditions.
+  trigger:
+    # Pull requests with any of these labels (case-insensitive) are added to
+    # the trigger.
+    labels: ["merge when ready"]
+
+    # Pull requests where the body or any comment contains any of these
+    # substrings are added to the trigger.
+    # comment_substrings: ["==MERGE_WHEN_READY=="]
+
+    # Pull requests where any comment matches one of these exact strings are
+    # added to the trigger.
+    # comments: ["Please merge this pull request!"]
+
+    # Pull requests where the body contains any of these substrings are added
+    # to the trigger.
+    # pr_body_substrings: ["==MERGE_WHEN_READY=="]
+
+    # Pull requests targeting any of these branches are added to the trigger.
+    branches: ["master"]
+
+    # Pull requests with auto merge enabled are added to the trigger.
+    auto_merge: true
   required_statuses:
     - "policy-bot: master"
-  whitelist:
-    labels: [ "bulldozer-merge" ]
-    # pr_body_substrings:
-    #   - "labels: library-update, semver-minor"
-  blacklist:
-    labels: [ "bulldozer-do-not-merge" ]
   method: squash
   options:
     squash:
       body: "pull_request_body"
   delete_after_merge: true
-update:
-  whitelist:
-    labels: [ "bulldozer-update" ]
-  blacklist:
-    labels: [ "bulldozer-do-not-update" ]
+# update:
+#   whitelist:
+#     labels: [ "bulldozer-update" ]
+#   blacklist:
+#     labels: [ "bulldozer-do-not-update" ]
+
