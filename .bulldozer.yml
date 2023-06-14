@@ -1,0 +1,20 @@
+version: 1
+merge:
+  required_statuses:
+    - "policy-bot: master"
+  whitelist:
+    labels: [ "bulldozer-merge" ]
+    # pr_body_substrings:
+    #   - "labels: library-update, semver-minor"
+  blacklist:
+    labels: [ "bulldozer-do-not-merge" ]
+  method: squash
+  options:
+    squash:
+      body: "pull_request_body"
+  delete_after_merge: true
+update:
+  whitelist:
+    labels: [ "bulldozer-update" ]
+  blacklist:
+    labels: [ "bulldozer-do-not-update" ]
