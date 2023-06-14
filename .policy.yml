@@ -17,7 +17,6 @@ approval_rules:
 
 - name: prod
   description: prod files
-
   if:
     changed_files:
       paths:
@@ -25,16 +24,10 @@ approval_rules:
   requires:
     count: 1
     users: ["aroq"]
-
   options:
-<<<<<<< Updated upstream
-    request_review: true
-=======
     request_review:
       enabled: true
->>>>>>> Stashed changes
-    mode: all-users
-
+      mode: all-users
 
 - name: support
   description: support files
@@ -46,10 +39,6 @@ approval_rules:
     count: 1
     users: ["aroq"]
   options:
-<<<<<<< Updated upstream
-    request_review: true
-=======
     request_review:
       enabled: true
->>>>>>> Stashed changes
-    mode: all-users
+      mode: all-users
