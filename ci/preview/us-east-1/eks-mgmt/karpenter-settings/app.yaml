@@ -3,4 +3,4 @@ sources:
   main:
     kind: kustomize
     path: ci/preview/us-east-1/eks-mgmt/karpenter-settings
-    targetRevision: "test"
+    targetRevision: "test2"
