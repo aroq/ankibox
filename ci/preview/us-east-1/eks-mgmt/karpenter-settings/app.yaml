@@ -2,5 +2,5 @@ namespace: karpenter
 sources:
   main:
     kind: kustomize
-    path: ci/preview/us-east-1/eks-mgmt/karpenter-settings
+    path: ci/preview/us-e3st-1/eks-mgmt/karpenter-settings
     targetRevision: "test2"
